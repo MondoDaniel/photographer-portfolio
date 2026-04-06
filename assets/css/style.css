@@ -1,0 +1,18 @@
+:root {
+    /*couleurs principales*/
+    --primary-color: #003366; /*bleu profond (titres, navbar)*/
+    --secondary-color: #007BFF; /*bleu vif (boutons, liens)*/
+    --accent-color: #E3F2FD; /*bleu tres clair (fonds de section, cartes*/
+
+    /*couleurs neutres*/
+    --text-color: #333333; /*girs foncé pour le texte*/
+    --light-color: #FFFFFF; /*blanc*/
+    --dark-color: #1A1A1A; /*presque noir*/
+
+    /*typographies*/
+    --title-font: 'Poppins', sans-serif;
+    --body-font: 'Open Sans', sans-serif;
+
+    /*transitions*/
+    --transition: all 0.3s ease;
+}

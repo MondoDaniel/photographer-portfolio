@@ -1,19 +1,29 @@
-const mobileMenu = document.getElementById('mobile-menu');
-const navLinks = document.querySelector('.nav-links');
+/**
+ * Gestion du menu hamburger pour le portfolio PhotoStudio
+ */
 
-mobileMenu.addEventListener('click', () => {
-    //solution simple pour l'instant : on bascule l'affichage
-    if (navLinks.style.display === "flex") {
-        navLinks.style.display = "none";
-    } else {
-        navLinks.style.display = "flex";
-        navLinks.style.flexDirection = "column";
-        navLinks.style.position = "absolute";
-        navLinks.style.top = "70px";
-        navLinks.style.left = "0";
-        navLinks.style.width = "100%";
-        navLinks.style.background = "rgba(0, 51, 102, 0.9)";
-        navLinks.style.padding = "20px";
-        navLinks.style.borderRadius = "20px";
-    }
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+    const icon = menuToggle.querySelector('i');
+
+    menuToggle.addEventListener('click', () => {
+        // 1. On bascule la classe 'active' sur la liste des liens
+        navLinks.classList.toggle('active');
+
+        // 2. On change l'icône : de "bars" (menu) à "times" (croix)
+        if (navLinks.classList.contains('active')) {
+            icon.classList.replace('fa-bars', 'fa-times');
+        } else {
+            icon.classList.replace('fa-times', 'fa-bars');
+        }
+    });
+
+    // Optionnel : Fermer le menu si on clique sur un lien (utile pour les ancres)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            icon.classList.replace('fa-times', 'fa-bars');
+        });
+    });
 });

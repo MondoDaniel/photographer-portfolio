@@ -38,12 +38,13 @@ body {
     width: 90%;
     z-index: 1000;
     /*effet rectangle arrondi et flou*/
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 51, 102, 0.85);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 50px;
     padding: 10px 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .navbar {
@@ -67,6 +68,14 @@ body {
     color: var(--light-color);
     font-size: 1.5rem;
     cursor: pointer;
+}
+
+.logo .nav-links a, .menu-toggle {
+    color: var(--light-color) !important;
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color) !important;
 }
 
 /*section hero*/
@@ -168,6 +177,8 @@ body {
     color: var(--primary-color);
     margin-bottom: 50px;
     position: realtive;
+    text-align: center;
+    width: 100%;
 }
 
 /*soulignement decoratif sous le titre*/
@@ -247,34 +258,37 @@ body {
 /*section carrousel*/
 
 .featured-work {
-    padding: 60px 0;
+    padding: 40px 20px;
     background-color: var(--accent-color); /*variable bleu clair*/
     overflow: hidden;
 }
 
 .carousel-viewport {
     width: 100%;
-    max-width: 1200px; /*largeur max sur desktop*/
+    max-width: 850px; /*largeur sur desktop*/
+    height: 350px;
     margin: 0 auto;
     position: relative;
     overflow: hidden; /*cache les images qui depassent*/
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .carousel-track {
     display: flex;
     width: 400%; /*4 images a 100% chacune*/
+    height: 100%;
     animation: scrollCarousel 12s infinite ease-in-out;
 }
 
 .slide {
-    width: 100%;
+    width: 25%;
+    height: 100%;
 }
 
 .slide img {
     width: 100%;
-    height: 400%;
+    height: 100%;
     object-fit: cover;
     display: block;
 }
@@ -282,18 +296,172 @@ body {
 /*animation du carrousel*/
 
 @keyframes scrollCarousel {
-    0% {transform: translateX(0);} /*Img 1*/
-    25% {transform: translateX(-25%);} /*transition vers Img 2*/
-    30% {transform: translateX(-25%);} /*pause sur Img 2*/
-    55% {transform: translateX(-50%);} /*transition vers Img 3*/
-    60% {transform: translateX(-50%);} /*pause sur Img 3*/
-    95% {transform: translateX(-75%);} /*transition vers le doublon Img 1*/
-    100% {transform: translateX(-75%);} /*fin*/
+    0%, 20% {transform: translateX(0);}
+    25%, 45% {transform: translateX(-25%);}
+    50%, 70% {transform: translateX(-50%);}
+    75%, 100% {transform: translateX(-75%);}
 }
 
 /*ajustement de la hauteur pour mobile*/
 @media (max-width: 768px) {
-    .slide img {
+    .carousel-viewport {
         height: 250px;
+    }
+}
+
+
+/*section galerie*/
+
+.gallery {
+    padding: 80px 20px;
+    background-color: var(--light-color);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 colonne sur mobile */
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative; /* Indispensable pour placer l'overlay par-dessus */
+    overflow: hidden; /* Pour que l'image ne dépasse pas au zoom */
+    border-radius: 10px;
+    height: 300px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease; /* Transition pour le zoom */
+}
+
+/*overlay: effet au survol*/
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 51, 102, 0.7); /* bleu primaire avec transparence */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* invisible par défaut */
+    transition: var(--transition);
+}
+
+.overlay-text {
+    text-align: center;
+    color: var(--light-color);
+    transform: translateY(20px); /* Légère descente pour l'animation */
+    transition: var(--transition);
+}
+
+.overlay-text h3 {
+    font-family: var(--title-font);
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.overlay-text p {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/*actions au survol*/
+
+.gallery-item:hover .overlay {
+    opacity: 1; /* Rendre l'overlay visible */
+}
+
+.gallery-item:hover .overlay-text {
+    transform: translateY(0); /* Le texte remonte à sa place */
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1); /* Zoom discret de l'image */
+}
+
+/* responsive : tablette et desktop (Grille 2x2) */
+@media (min-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .gallery-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+
+/*pied de page*/
+
+.main-footer {
+    background-color: var(--primary-color); /* bleu profond */
+    color: var(--light-color);
+    padding: 40px 20px;
+    margin-top: 40px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column; /* mobile First : empilé verticalement */
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-copyright p {
+    font-family: var(--body-font);
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.logo-footer {
+    font-family: var(--title-font);
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+/*icones reseaux sociaux*/
+
+.footer-socials {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icon {
+    color: var(--light-color);
+    font-size: 1.2rem;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%; /* Cercle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+/effet au survol des icônes*/
+.social-icon:hover {
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    border-color: var(--secondary-color);
+    transform: translateY(-5px); /* petit saut vers le haut */
+}
+
+/*responsive*/
+
+@media (min-width: 768px) {
+    .footer-content {
+        flex-direction: row; /* aligné horizontalement sur tablette/desktop */
+        justify-content: space-between;
     }
 }

@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Optionnel : Fermer le menu si on clique sur un lien (utile pour les ancres)
+    //Ferme le menu si on clique sur un lien
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');

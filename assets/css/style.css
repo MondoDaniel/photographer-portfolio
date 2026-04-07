@@ -112,7 +112,7 @@ body {
     height: 100vh;
     width: 100%;
     position: relative;
-    background: url('https://images.unsplash.com/photo-1493863641943-9b68992a8d07?q=80&w=2058&auto=format&fit=crop') no-repeat center center/cover;
+    background: url('../images/hero-home.jpg') no-repeat center center/cover;
     display: flex;
     align-items: flex-end; /*txt en bas*/
     justify-content: center;
@@ -136,8 +136,8 @@ body {
 
 .hero-content h1 {
     font-family: var(--title-font);
-    font-size: 2.2rem;
-    margin-bottom: 10px;
+    font-size: 1rem;
+    margin-bottom: 5px;
 }
 
 .hero-content p {
@@ -207,8 +207,10 @@ body {
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
 }
 
 .section-title {
@@ -333,7 +335,7 @@ body {
     display: block;
 }
 
-/*animation du carrousel*/
+/*animation du carroussel*/
 
 @keyframes scrollCarousel {
     0%, 20% {transform: translateX(0);}
@@ -508,7 +510,7 @@ body {
 
 
 
-/* --- PORTFOLIO PAGE --- */
+/*page portfolio*/
 
 .portfolio-hero {
     padding: 150px 20px 60px; /* Plus d'espace en haut pour la navbar */
@@ -520,10 +522,10 @@ body {
 .portfolio-hero h1 {
     font-family: var(--title-font);
     font-size: 3rem;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
-/* --- BOUTONS DE FILTRE --- */
+/*boutons de filtre*/
 .portfolio-filters {
     display: flex;
     justify-content: center;
@@ -550,7 +552,7 @@ body {
     transform: scale(1.05);
 }
 
-/* --- GRILLE PORTFOLIO (2 cols mobile / 3 cols desktop) --- */
+/*grille portfolio*/
 .portfolio-section {
     padding-bottom: 80px;
 }
@@ -558,7 +560,8 @@ body {
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur Mobile */
-    gap: 20px;
+    gap: 15px;
+    margin-top: 20px;
 }
 
 .portfolio-item {
@@ -576,7 +579,7 @@ body {
     transition: transform 0.5s ease;
 }
 
-/* Overlay Portfolio (Titre + Catégorie) */
+/*Overlay Portfolio (Titre + Catégorie)*/
 .portfolio-overlay {
     position: absolute;
     bottom: 0; left: 0;
@@ -600,7 +603,7 @@ body {
     opacity: 0.8;
 }
 
-/* --- HOVER EFFECTS --- */
+/*hver effects*/
 .portfolio-item:hover img {
     transform: scale(1.1);
 }
@@ -609,7 +612,7 @@ body {
     transform: translateY(0); /* Remonte au survol */
 }
 
-/* --- RESPONSIVE DESKTOP --- */
+/*responsive desktop*/
 @media (min-width: 1024px) {
     .portfolio-grid {
         grid-template-columns: repeat(3, 1fr); /* 3 colonnes sur PC */
@@ -624,13 +627,21 @@ body {
 
 
 
-/* --- PAGE CONTACT --- */
+/*page contact*/
 
 .contact-hero {
     padding: 150px 20px 60px;
     background-color: var(--primary-color);
     color: var(--light-color);
     text-align: center;
+    position: relative;
+    background: linear-gradient(rgba(0, 51, 102, 0.4), rgba(0, 51, 102, 0.4)), url('../images/contact-back.jpg') no-repeat center center/cover;
+}
+
+.contact-hero h1 {
+    font-family: var(--title-font);
+    font-size: 3rem;
+    margin-bottom: 5px;
 }
 
 .logo a {
@@ -650,7 +661,7 @@ body {
     box-shadow: 0 15px 50px rgba(0,0,0,0.1);
 }
 
-/* Côté Formulaire (3/4) */
+/*formulaire de contact*/
 .contact-form-side {
     background-color: var(--light-color);
     padding: 40px;
@@ -681,7 +692,7 @@ body {
     box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
 }
 
-/* Côté Infos (1/4) */
+/*infos contact*/
 .contact-info-side {
     background-color: var(--primary-color);
     color: var(--light-color);
@@ -712,12 +723,12 @@ body {
     font-size: 0.95rem;
 }
 
-/* CARTE */
+/*google maps*/
 .map-section {
     line-height: 0; /* Supprime l'espace sous l'iframe */
 }
 
-/* --- RESPONSIVE CONTACT (3/4 - 1/4) --- */
+/*responsive contact*/
 
 @media (min-width: 1024px) {
     .contact-wrapper {

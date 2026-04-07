@@ -38,7 +38,7 @@ body {
     width: 90%;
     z-index: 1000;
     /*effet rectangle arrondi et flou*/
-    background: rgba(0, 51, 102, 0.85);
+    background: rgba(0, 51, 102, 0.3);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -463,5 +463,120 @@ body {
     .footer-content {
         flex-direction: row; /* aligné horizontalement sur tablette/desktop */
         justify-content: space-between;
+    }
+}
+
+
+
+/* --- PORTFOLIO PAGE --- */
+
+.portfolio-hero {
+    padding: 150px 20px 60px; /* Plus d'espace en haut pour la navbar */
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    text-align: center;
+}
+
+.portfolio-hero h1 {
+    font-family: var(--title-font);
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+/* --- BOUTONS DE FILTRE --- */
+.portfolio-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 40px 0;
+}
+
+.filter-btn {
+    padding: 10px 25px;
+    border: 2px solid var(--secondary-color);
+    background: transparent;
+    color: var(--primary-color);
+    font-family: var(--body-font);
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    transform: scale(1.05);
+}
+
+/* --- GRILLE PORTFOLIO (2 cols mobile / 3 cols desktop) --- */
+.portfolio-section {
+    padding-bottom: 80px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur Mobile */
+    gap: 20px;
+}
+
+.portfolio-item {
+    position: relative;
+    height: 350px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Overlay Portfolio (Titre + Catégorie) */
+.portfolio-overlay {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(transparent, rgba(0, 51, 102, 0.9));
+    color: var(--light-color);
+    transform: translateY(100%); /* Caché par défaut en bas */
+    transition: var(--transition);
+}
+
+.portfolio-overlay h3 {
+    font-family: var(--title-font);
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.portfolio-overlay span {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+/* --- HOVER EFFECTS --- */
+.portfolio-item:hover img {
+    transform: scale(1.1);
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    transform: translateY(0); /* Remonte au survol */
+}
+
+/* --- RESPONSIVE DESKTOP --- */
+@media (min-width: 1024px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 colonnes sur PC */
+        gap: 30px;
+    }
+    
+    .portfolio-item {
+        height: 400px; /* Un peu plus grand sur PC */
     }
 }

@@ -1,0 +1,127 @@
+<!-- portfolio.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Mes Réalisations</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/script.js"></script>
+</head>
+<body>
+
+    <!-- EN-TETE (Identique à index.html) -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="logo">PhotoStudio</div>
+            <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- TITRE DE PAGE -->
+    <section class="portfolio-hero">
+        <div class="container">
+            <h1>Mes Réalisations</h1>
+            <p>Découvrez mon univers à travers ces différents projets.</p>
+        </div>
+    </section>
+
+    <!-- FILTRES -->
+    <div class="container">
+        <div class="portfolio-filters">
+            <button class="filter-btn active">Tous</button>
+            <button class="filter-btn">Portrait</button>
+            <button class="filter-btn">Événement</button>
+            <button class="filter-btn">Paysage</button>
+        </div>
+    </div>
+
+    <!-- GRILLE PORTFOLIO -->
+    <section class="portfolio-section">
+        <div class="container">
+            <div class="portfolio-grid">
+                <!-- Photo 1 -->
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800" alt="Portrait Femme">
+                    <div class="portfolio-overlay">
+                        <h3>Regard Profond</h3>
+                        <span>Portrait</span>
+                    </div>
+                </div>
+                <!-- Photo 2 -->
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=800" alt="Mariage">
+                    <div class="portfolio-overlay">
+                        <h3>Union Royale</h3>
+                        <span>Événement</span>
+                    </div>
+                </div>
+                <!-- Photo 3 -->
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=800" alt="Montagnes">
+                    <div class="portfolio-overlay">
+                        <h3>Pics Glacés</h3>
+                        <span>Paysage</span>
+                    </div>
+                </div>
+                <!-- Photo 4 -->
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=800" alt="Portrait Studio">
+                    <div class="portfolio-overlay">
+                        <h3>Ombre & Lumière</h3>
+                        <span>Portrait</span>
+                    </div>
+                </div>
+                <!-- Photo 5 -->
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=800" alt="Soirée">
+                    <div class="portfolio-overlay">
+                        <h3>Éclats de Nuit</h3>
+                        <span>Événement</span>
+                    </div>
+                </div>
+                <!-- Photo 6 -->
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=800" alt="Forêt">
+                    <div class="portfolio-overlay">
+                        <h3>Forêt Envoûtée</h3>
+                        <span>Paysage</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--pied de page-->
+<footer class="main-footer">
+    <div class="container footer-content">
+        <!--copyright-->
+        <div class="footer-copyright">
+            <p>&copy; 2026 <span class="logo-footer">PhotoStudio</span>. Tous droits réservés.</p>
+        </div>
+
+        <!--réseaux sociaux-->
+        <div class="footer-socials">
+            <a href="#" class="social-icon" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-icon" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-icon" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+    </div>
+</footer>
+
+    
+</body>
+</html>
